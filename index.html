@@ -29,13 +29,13 @@
 <body>
   <section class="role-screen" id="role-screen" aria-label="이용 방식 선택"><button class="role-option role-user" id="role-user" type="button"><span class="role-icon" aria-hidden="true">🗺️</span><span class="role-kicker">BUS LOCATION</span><h1>이용자</h1><p>실시간 차량 위치와 운행 지도를 확인하세요.</p><span class="role-action">지도 이용하기 →</span></button><button class="role-option role-driver" id="role-driver" type="button"><span class="role-icon" aria-hidden="true">🚌</span><span class="role-kicker">DRIVER ACCESS</span><h1>기사</h1><p>로그인 후 운행을 시작하고 현재 위치를 공유하세요.</p><span class="role-action">기사 로그인 →</span></button></section>
   <div class="app" id="dashboard" hidden>
-    <aside class="sidebar"><div class="profile-avatar" aria-label="사용자 프로필">👤</div><button class="login-brand" id="sidebar-login-open" type="button"><span class="brand-mark">B</span>로그인하기</button><button class="sidebar-user-entry" id="sidebar-user-open" type="button">내 정보</button><nav class="nav"><a class="active" href="#map"><span>◉</span>실시간 위치</a><a href="#routes"><span>⌁</span>노선 관리</a><a href="#alerts"><span>◌</span>알림 센터</a><a href="#reports"><span>▥</span>운행 리포트</a></nav><button class="driver-entry" id="driver-open" type="button">기사</button><div class="sidebar-bottom"><span class="live-dot">●</span> 시스템 정상 운영 중<br/>GPS 수신 상태: 양호</div></aside>
+    <aside class="sidebar"><nav class="nav"><a class="active" href="#map"><span>◉</span>실시간 위치</a><a href="#routes"><span>⌁</span>노선 관리</a><a href="#alerts"><span>◌</span>알림 센터</a></nav><div class="sidebar-bottom"><span class="live-dot">●</span> 시스템 정상 운영 중<br/>GPS 수신 상태: 양호</div></aside>
     <main><header class="top"><div><div class="eyebrow" style="display:flex;align-items:center;gap:8px;color:#111;font-weight:800"><img src="pniel-logo.jpeg" alt="브니엘여자고등학교 로고" style="width:38px;height:38px;border-radius:50%;object-fit:cover">브니엘여자고등학교</div><h1>실시간 차량 위치</h1></div><div class="top-actions"><div class="clock" id="clock"></div><button class="refresh" id="current-location">⌖ 현재 위치</button><span id="refresh" hidden></span></div></header>
       <section class="content"><div class="panel" id="map"><div class="panel-head"><div><div class="panel-title">운행 지도</div><div class="sub">부산광역시 금정구 · 카카오맵</div></div></div><div class="map live-map" aria-label="부산광역시 금정구 차량 위치 지도"><div id="kakao-map" class="kakao-map"></div></div></div>
       <div class="panel" id="fleet"><div class="panel-head"><div><div class="panel-title">주요 차량</div><div class="sub">최근 수신 순</div></div><a href="#routes" style="font-size:12px;color:#2864dc;text-decoration:none;font-weight:700">전체 보기 →</a></div><div class="fleet"><div class="fleet-row"><div class="route-badge">금정1</div><div><strong>부산 71자 1284</strong><small>부산대 → 구서역</small></div><span class="status">정상</span></div><div class="fleet-row"><div class="route-badge">1002</div><div><strong>부산 70바 4021</strong><small>금정구청 → 노포동</small></div><span class="status delay">4분 지연</span></div><div class="fleet-row"><div class="route-badge">80</div><div><strong>부산 75아 0098</strong><small>서동 → 장전역</small></div><span class="status stop">정차</span></div><div class="fleet-row"><div class="route-badge">51</div><div><strong>부산 70자 7654</strong><small>부곡동 → 부산대</small></div><span class="status">정상</span></div></div></div></section>
     </main>
-  </div><div class="driver-modal" id="driver-modal" hidden><section class="driver-card" role="dialog" aria-modal="true" aria-labelledby="driver-title"><button class="driver-close" id="driver-close" type="button" aria-label="닫기">×</button><h2 id="driver-title">기사 로그인</h2><p>운행을 시작한 기사만 위치 공유를 활성화할 수 있습니다.</p><form class="driver-form" id="driver-form"><label>이메일<input id="driver-email" type="email" autocomplete="email" placeholder="driver@example.com" required></label><label>비밀번호<input id="driver-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label><button class="driver-submit" id="driver-submit" type="submit">로그인</button><p class="driver-notice" id="driver-notice" aria-live="polite"></p></form><section class="trip-controls" id="trip-controls" hidden><button class="trip-start" id="trip-start" type="button">운행 시작 · GPS 공유</button><button class="trip-stop" id="trip-stop" type="button">운행 종료</button><p class="trip-status" id="trip-status" aria-live="polite"></p></section><p class="driver-privacy">운행 시작을 누른 동안에만 현재 위치가 공개 지도에 표시됩니다.</p></section></div><div class="user-modal" id="user-modal" hidden><section class="user-card" role="dialog" aria-modal="true" aria-labelledby="user-title"><button class="user-close" id="user-close" type="button" aria-label="닫기">×</button><h2 id="user-title">내 지도</h2><p id="user-description">로그인하면 자주 타는 노선과 탑승 위치를 이 기기에서 저장할 수 있어요.</p><form class="user-form" id="user-form"><label>이메일<input id="user-email" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>비밀번호<input id="user-password" type="password" autocomplete="current-password" placeholder="8자 이상 비밀번호" required></label><button class="user-submit" id="user-submit" type="submit">로그인</button><button class="user-switch" id="user-switch" type="button">처음 이용하나요? 계정 만들기</button><p class="user-notice" id="user-notice" aria-live="polite"></p></form><form class="user-form preference-box" id="preference-form" hidden><label>자주 타는 노선<input id="preferred-route" type="text" placeholder="예: 1002번"></label><label>주로 타는 위치<input id="boarding-place" type="text" placeholder="예: 구서역 2번 출구"></label><button class="location-button" id="my-location" type="button">⌖ 내 현재 위치를 지도 중심으로</button><button class="user-submit" type="submit">내 지도 설정 저장</button><p class="user-notice" id="preference-notice" aria-live="polite"></p></form><p class="user-privacy">위치 사용은 ‘내 현재 위치’ 버튼을 눌렀을 때만 요청되며, 위치는 이 기기에만 저장됩니다.</p></section></div><div class="gps-help-modal" id="gps-help-modal" hidden><section class="gps-help-card" role="dialog" aria-modal="true" aria-labelledby="gps-help-title"><button class="gps-help-close" id="gps-help-close" type="button" aria-label="닫기">×</button><h2 id="gps-help-title">GPS 연결이 필요해요</h2><p id="gps-help-message">위치 권한을 허용하면 현재 위치를 지도에 표시할 수 있습니다.</p><div class="gps-help-guide"><strong>연결하는 방법</strong><ol><li>위치 권한 창이 뜨면 <b>허용</b>을 선택하세요.</li><li>권한 창이 다시 안 뜨면 주소창 왼쪽의 자물쇠 또는 사이트 설정에서 <b>위치: 허용</b>으로 바꾸세요.</li><li>휴대폰은 설정에서 <b>위치 서비스</b>를 켜고, Safari 또는 사용 중인 브라우저의 위치 권한을 <b>허용</b>으로 바꾸세요.</li><li>아래 버튼을 눌러 다시 연결해 보세요.</li></ol></div><p class="gps-help-tip">현재 위치는 지도에 표시할 때만 사용되며, 이 기능으로 저장되지 않습니다.</p><button class="gps-help-retry" id="gps-help-retry" type="button">GPS 다시 연결하기</button></section></div>
-  <script>const c=document.getElementById('clock');function tick(){c.textContent=new Intl.DateTimeFormat('ko-KR',{dateStyle:'medium',timeStyle:'medium'}).format(new Date())}tick();setInterval(tick,1000);const mapRoot=document.getElementById('kakao-map');mapRoot.style.minHeight='430px';let mapStarted=false;function showBackupMap(){if(mapStarted)return;mapRoot.innerHTML='<iframe title="금정구 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=129.055%2C35.218%2C129.132%2C35.275&amp;layer=mapnik&amp;marker=35.2426%2C129.0926" style="width:100%;height:100%;border:0" loading="eager"></iframe>'}function initKakaoMap(){if(mapStarted)return;try{const center=new kakao.maps.LatLng(35.2426,129.0926);const map=new kakao.maps.Map(mapRoot,{center,level:5});mapStarted=true;window.busMap=map;map.setZoomable(true);map.addControl(new kakao.maps.ZoomControl(),kakao.maps.ControlPosition.RIGHT);window.dispatchEvent(new Event('busmapready'));const repairMap=()=>{if(window.busMap){window.busMap.relayout();window.busMap.setCenter(center)}};window.addEventListener('resize',repairMap);requestAnimationFrame(repairMap);setTimeout(repairMap,250)}catch(error){showBackupMap()}}let attempts=0;const sdkWait=setInterval(()=>{if(window.kakao&&kakao.maps){clearInterval(sdkWait);try{kakao.maps.load(initKakaoMap)}catch(error){showBackupMap()}}else if(++attempts>=15){clearInterval(sdkWait);showBackupMap()}},200);const modal=document.getElementById('driver-modal');document.getElementById('driver-open').onclick=()=>modal.hidden=false;document.getElementById('driver-close').onclick=()=>modal.hidden=true;modal.onclick=e=>{if(e.target===modal)modal.hidden=true};const userModal=document.getElementById('user-modal');const openUserLogin=()=>userModal.hidden=false;document.getElementById('sidebar-login-open').onclick=openUserLogin;document.getElementById('sidebar-user-open').onclick=openUserLogin;document.getElementById('user-close').onclick=()=>userModal.hidden=true;userModal.onclick=e=>{if(e.target===userModal)userModal.hidden=true};</script>
+  </div><div class="driver-modal" id="driver-modal" hidden><section class="driver-card" role="dialog" aria-modal="true" aria-labelledby="driver-title"><button class="driver-close" id="driver-close" type="button" aria-label="닫기">×</button><h2 id="driver-title">기사 로그인</h2><p>운행을 시작한 기사만 위치 공유를 활성화할 수 있습니다.</p><form class="driver-form" id="driver-form"><label>이메일<input id="driver-email" type="email" autocomplete="email" placeholder="driver@example.com" required></label><label>비밀번호<input id="driver-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label><button class="driver-submit" id="driver-submit" type="submit">로그인</button><p class="driver-notice" id="driver-notice" aria-live="polite"></p></form><section class="trip-controls" id="trip-controls" hidden><button class="trip-start" id="trip-start" type="button">운행 시작 · GPS 공유</button><button class="trip-stop" id="trip-stop" type="button">운행 종료</button><p class="trip-status" id="trip-status" aria-live="polite"></p></section><p class="driver-privacy">운행 시작을 누른 동안에만 현재 위치가 공개 지도에 표시됩니다.</p></section></div><div class="gps-help-modal" id="gps-help-modal" hidden><section class="gps-help-card" role="dialog" aria-modal="true" aria-labelledby="gps-help-title"><button class="gps-help-close" id="gps-help-close" type="button" aria-label="닫기">×</button><h2 id="gps-help-title">GPS 연결이 필요해요</h2><p id="gps-help-message">위치 권한을 허용하면 현재 위치를 지도에 표시할 수 있습니다.</p><div class="gps-help-guide"><strong>연결하는 방법</strong><ol><li>위치 권한 창이 뜨면 <b>허용</b>을 선택하세요.</li><li>권한 창이 다시 안 뜨면 주소창 왼쪽의 자물쇠 또는 사이트 설정에서 <b>위치: 허용</b>으로 바꾸세요.</li><li>휴대폰은 설정에서 <b>위치 서비스</b>를 켜고, Safari 또는 사용 중인 브라우저의 위치 권한을 <b>허용</b>으로 바꾸세요.</li><li>아래 버튼을 눌러 다시 연결해 보세요.</li></ol></div><p class="gps-help-tip">현재 위치는 지도에 표시할 때만 사용되며, 이 기능으로 저장되지 않습니다.</p><button class="gps-help-retry" id="gps-help-retry" type="button">GPS 다시 연결하기</button></section></div>
+  <script>const c=document.getElementById('clock');function tick(){c.textContent=new Intl.DateTimeFormat('ko-KR',{dateStyle:'medium',timeStyle:'medium'}).format(new Date())}tick();setInterval(tick,1000);const mapRoot=document.getElementById('kakao-map');mapRoot.style.minHeight='430px';let mapStarted=false;function showBackupMap(){if(mapStarted)return;mapRoot.innerHTML='<iframe title="금정구 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=129.055%2C35.218%2C129.132%2C35.275&amp;layer=mapnik&amp;marker=35.2426%2C129.0926" style="width:100%;height:100%;border:0" loading="eager"></iframe>'}function initKakaoMap(){if(mapStarted)return;try{const center=new kakao.maps.LatLng(35.2426,129.0926);const map=new kakao.maps.Map(mapRoot,{center,level:5});mapStarted=true;window.busMap=map;map.setZoomable(true);map.addControl(new kakao.maps.ZoomControl(),kakao.maps.ControlPosition.RIGHT);window.dispatchEvent(new Event('busmapready'));const repairMap=()=>{if(window.busMap){window.busMap.relayout();window.busMap.setCenter(center)}};window.addEventListener('resize',repairMap);requestAnimationFrame(repairMap);setTimeout(repairMap,250)}catch(error){showBackupMap()}}let attempts=0;const sdkWait=setInterval(()=>{if(window.kakao&&kakao.maps){clearInterval(sdkWait);try{kakao.maps.load(initKakaoMap)}catch(error){showBackupMap()}}else if(++attempts>=15){clearInterval(sdkWait);showBackupMap()}},200);const modal=document.getElementById('driver-modal');document.getElementById('driver-close').onclick=()=>modal.hidden=true;modal.onclick=e=>{if(e.target===modal)modal.hidden=true};</script>
   <script>
     const roleScreen = document.getElementById('role-screen');
     const dashboard = document.getElementById('dashboard');
@@ -115,7 +115,7 @@
   </script>
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
-    import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
+    import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
     import { getFirestore, doc, setDoc, deleteDoc, collection, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
 
     const firebaseConfig = {
@@ -149,76 +149,6 @@
         submit.disabled = false;
         submit.textContent = '로그인';
       }
-    });
-
-    const userForm = document.getElementById('user-form');
-    const userNotice = document.getElementById('user-notice');
-    const userSubmit = document.getElementById('user-submit');
-    const userSwitch = document.getElementById('user-switch');
-    const preferenceForm = document.getElementById('preference-form');
-    const preferenceNotice = document.getElementById('preference-notice');
-    const userButton = document.getElementById('sidebar-user-open');
-    let signUpMode = false;
-
-    function setUserMode() {
-      userSubmit.textContent = signUpMode ? '계정 만들기' : '로그인';
-      userSwitch.textContent = signUpMode ? '이미 계정이 있나요? 로그인' : '처음 이용하나요? 계정 만들기';
-      document.getElementById('user-password').autocomplete = signUpMode ? 'new-password' : 'current-password';
-    }
-    userSwitch.addEventListener('click', () => { signUpMode = !signUpMode; userNotice.textContent = ''; setUserMode(); });
-
-    onAuthStateChanged(auth, user => {
-      const signedIn = Boolean(user);
-      userButton.textContent = signedIn ? '내 정보' : '내 정보';
-      userButton.classList.toggle('logged-in', signedIn);
-      userForm.hidden = signedIn;
-      preferenceForm.hidden = !signedIn;
-      if (!signedIn) return;
-      const profile = JSON.parse(localStorage.getItem(`bus-profile:${user.uid}`) || '{}');
-      document.getElementById('preferred-route').value = profile.route || '';
-      document.getElementById('boarding-place').value = profile.boarding || '';
-      document.getElementById('user-description').textContent = '내 정보 설정은 이 기기에서만 저장됩니다.';
-    });
-
-    userForm.addEventListener('submit', async event => {
-      event.preventDefault();
-      userNotice.textContent = '';
-      userSubmit.disabled = true;
-      try {
-        const email = document.getElementById('user-email').value;
-        const password = document.getElementById('user-password').value;
-        if (signUpMode) await createUserWithEmailAndPassword(auth, email, password);
-        else await signInWithEmailAndPassword(auth, email, password);
-        userNotice.style.color = '#158461';
-        userNotice.textContent = '로그인되었습니다. 내 정보를 저장해 보세요.';
-      } catch (error) {
-        userNotice.style.color = '#c34c4c';
-        userNotice.textContent = error.code === 'auth/email-already-in-use' ? '이미 가입된 이메일입니다. 로그인으로 전환해 주세요.' : error.code === 'auth/weak-password' ? '비밀번호는 6자 이상으로 입력해 주세요.' : '로그인 또는 가입에 실패했습니다. 입력 내용을 확인해 주세요.';
-      } finally { userSubmit.disabled = false; }
-    });
-
-    preferenceForm.addEventListener('submit', event => {
-      event.preventDefault();
-      const user = auth.currentUser;
-      if (!user) return;
-      const route = document.getElementById('preferred-route').value.trim();
-      const boarding = document.getElementById('boarding-place').value.trim();
-      localStorage.setItem(`bus-profile:${user.uid}`, JSON.stringify({ route, boarding }));
-      preferenceNotice.style.color = '#158461';
-      preferenceNotice.textContent = `${route || '선호 노선'} · ${boarding || '탑승 위치'} 설정을 저장했습니다.`;
-    });
-
-    document.getElementById('my-location').addEventListener('click', () => {
-      if (!navigator.geolocation) { preferenceNotice.textContent = '이 기기에서는 위치 기능을 사용할 수 없습니다.'; return; }
-      preferenceNotice.textContent = '현재 위치를 확인하고 있습니다…';
-      navigator.geolocation.getCurrentPosition(position => {
-        if (window.busMap && window.kakao) {
-          window.busMap.setLevel(4);
-          window.busMap.panTo(new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude));
-        }
-        preferenceNotice.style.color = '#158461';
-        preferenceNotice.textContent = '현재 위치를 지도 중심으로 이동했습니다.';
-      }, () => { preferenceNotice.style.color = '#c34c4c'; preferenceNotice.textContent = '위치 권한을 허용하면 내 위치를 표시할 수 있습니다.'; }, { enableHighAccuracy: true, timeout: 10000 });
     });
 
     // 기사 휴대폰 GPS는 운행 시작 버튼을 누른 동안에만 Firestore에 저장됩니다.
