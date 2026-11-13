@@ -25,6 +25,7 @@
     .gps-help-modal{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:18px;background:#06172bb8}.gps-help-modal[hidden]{display:none}.gps-help-card{width:min(100%,440px);background:#fff;border-radius:18px;padding:25px;box-shadow:0 25px 70px #06172b66;position:relative}.gps-help-close{position:absolute;right:16px;top:13px;background:transparent;color:#62748e;font-size:25px}.gps-help-card h2{margin:0 28px 7px 0;font-size:20px}.gps-help-card>p{margin:0 0 17px;color:#586a82;font-size:13px;line-height:1.55}.gps-help-guide{background:#f4f7fb;border-radius:11px;padding:14px 15px;margin-bottom:14px;color:#34455e;font-size:13px;line-height:1.55}.gps-help-guide strong{color:#192a43}.gps-help-guide ol{margin:8px 0 0;padding-left:19px}.gps-help-guide li+li{margin-top:7px}.gps-help-tip{font-size:11px!important;color:#7a8798!important;margin-bottom:15px!important}.gps-help-retry{width:100%;border-radius:9px;background:#2864dc;color:#fff;padding:13px;font-weight:800}.gps-help-retry:hover{background:#1e55c5}
     .role-screen{min-height:100dvh;display:grid;grid-template-columns:1fr 1fr;background:#10233f}.role-screen[hidden]{display:none}.role-option{min-height:100dvh;padding:clamp(32px,7vw,110px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;color:#fff;transition:background .18s,transform .18s}.role-option:hover{transform:scale(1.01)}.role-user{background:linear-gradient(145deg,#174579,#2864dc)}.role-driver{background:linear-gradient(145deg,#0d1f38,#193556)}.role-kicker{margin:0 0 13px;font-size:14px;font-weight:800;letter-spacing:.12em;opacity:.8}.role-option h1{margin:0 0 12px;font-size:clamp(34px,5vw,64px);letter-spacing:-.05em}.role-option p{max-width:390px;margin:0 0 28px;font-size:16px;line-height:1.65;color:#e4edff}.role-action{background:#fff;color:#194c9b;border-radius:10px;padding:13px 19px;font-weight:900;font-size:15px}.role-driver .role-action{color:#10233f}.role-icon{font-size:44px;margin-bottom:18px}@media(max-width:700px){.role-screen{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.role-option{min-height:50dvh;padding:32px 28px}.role-option h1{font-size:38px}.role-option p{font-size:14px;margin-bottom:18px}.role-icon{font-size:34px;margin-bottom:10px}}
     .route-screen{min-height:100dvh;background:#f4f7fb;padding:clamp(25px,5vw,70px);color:#192a43}.route-screen[hidden]{display:none}.route-head{max-width:950px;margin:0 auto 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}.route-head h1{margin:5px 0 8px;font-size:clamp(28px,4vw,42px)}.route-head p{margin:0;color:#6e7d91;line-height:1.5}.route-back{flex:none;background:#10233f;color:#fff;border-radius:9px;padding:11px 15px;font-weight:800}.route-cards{max-width:950px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.route-card{background:#fff;border:1px solid #dfe6f0;border-radius:16px;padding:22px;text-align:left;box-shadow:0 4px 14px #20355b0c;transition:transform .15s,border-color .15s}.route-card:hover{transform:translateY(-2px);border-color:#2864dc}.route-card strong{display:block;font-size:21px;margin-bottom:6px}.route-card span{font-size:13px;color:#6e7d91}.route-card i{display:block;width:35px;height:5px;background:#2864dc;border-radius:9px;margin-bottom:15px}.route-card:nth-child(2) i{background:#20a070}.route-card:nth-child(3) i{background:#e79d32}.route-card:nth-child(4) i{background:#8a65d8}.route-card:nth-child(5) i{background:#de5a69}@media(max-width:640px){.route-screen{padding:24px 18px}.route-head{margin-bottom:19px}.route-head h1{font-size:28px}.route-cards{grid-template-columns:1fr;gap:11px}.route-card{padding:17px}.route-card strong{font-size:18px}}
+    .driver-console{min-height:100dvh;background:#f4f7fb;padding:clamp(25px,5vw,70px);color:#192a43}.driver-console[hidden]{display:none}.driver-console-inner{max-width:900px;margin:auto}.driver-console-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:22px}.driver-console-head h1{margin:4px 0 7px;font-size:clamp(27px,4vw,40px)}.driver-console-head p{margin:0;color:#6e7d91}.driver-close-console{background:#10233f;color:#fff;border-radius:9px;padding:11px 15px;font-weight:800}.driver-tools{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.driver-tool{background:#fff;border:1px solid #dfe6f0;border-radius:15px;padding:20px}.driver-tool h2{margin:0 0 8px;font-size:18px}.driver-tool p{font-size:13px;line-height:1.55;color:#6e7d91}.driver-route-form{display:grid;gap:9px;margin-top:14px}.driver-route-form input,.driver-route-form select{width:100%;border:1px solid #d8e1ec;border-radius:8px;padding:10px;font:inherit}.driver-route-form button{background:#2864dc;color:#fff;border-radius:8px;padding:11px;font-weight:800}.driver-trip-slot{margin-top:14px}.driver-vehicle-status{margin-top:14px;padding:11px;border-radius:8px;background:#edf3ff;color:#245bc7;font-size:13px;font-weight:700}@media(max-width:700px){.driver-console{padding:25px 18px}.driver-tools{grid-template-columns:1fr}.driver-console-head{margin-bottom:18px}}
   </style>
 </head>
 <body>
@@ -35,13 +36,15 @@
       <section class="content"><div class="panel" id="map"><div class="panel-head"><div><div class="panel-title">운행 지도</div><div class="sub" id="route-display">부산광역시 금정구 · 카카오맵</div></div></div><div class="map live-map" aria-label="부산광역시 금정구 차량 위치 지도"><div id="kakao-map" class="kakao-map"></div></div></div>
       <div class="panel" id="fleet"><div class="panel-head"><div><div class="panel-title">주요 차량</div><div class="sub">최근 수신 순</div></div><a href="#routes" style="font-size:12px;color:#2864dc;text-decoration:none;font-weight:700">전체 보기 →</a></div><div class="fleet"><div class="fleet-row"><div class="route-badge">금정1</div><div><strong>부산 71자 1284</strong><small>부산대 → 구서역</small></div><span class="status">정상</span></div><div class="fleet-row"><div class="route-badge">1002</div><div><strong>부산 70바 4021</strong><small>금정구청 → 노포동</small></div><span class="status delay">4분 지연</span></div><div class="fleet-row"><div class="route-badge">80</div><div><strong>부산 75아 0098</strong><small>서동 → 장전역</small></div><span class="status stop">정차</span></div><div class="fleet-row"><div class="route-badge">51</div><div><strong>부산 70자 7654</strong><small>부곡동 → 부산대</small></div><span class="status">정상</span></div></div></div></section>
     </main>
-  </div><section class="route-screen" id="route-screen" hidden><header class="route-head"><div><p class="eyebrow">BUS ROUTE</p><h1>노선 관리</h1><p>확인할 노선을 선택하면 지도에서 해당 구간을 볼 수 있습니다.</p></div><button class="route-back" id="route-back" type="button">지도 돌아가기</button></header><div class="route-cards"><button class="route-card" data-route="jangjeon1" type="button"><i></i><strong>장전1</strong><span>장전동 · 부산대 일대</span></button><button class="route-card" data-route="jangjeon2" type="button"><i></i><strong>장전2</strong><span>장전역 · 구서역 일대</span></button><button class="route-card" data-route="bugok" type="button"><i></i><strong>부곡</strong><span>부곡동 · 금정구청 일대</span></button><button class="route-card" data-route="namsan1" type="button"><i></i><strong>남산1</strong><span>남산동 · 구서동 일대</span></button><button class="route-card" data-route="namsan2" type="button"><i></i><strong>남산2</strong><span>남산동 · 두실역 일대</span></button></div></section><div class="driver-modal" id="driver-modal" hidden><section class="driver-card" role="dialog" aria-modal="true" aria-labelledby="driver-title"><button class="driver-close" id="driver-close" type="button" aria-label="닫기">×</button><h2 id="driver-title">기사 로그인</h2><p>운행을 시작한 기사만 위치 공유를 활성화할 수 있습니다.</p><form class="driver-form" id="driver-form"><label>이메일<input id="driver-email" type="email" autocomplete="email" placeholder="driver@example.com" required></label><label>비밀번호<input id="driver-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label><button class="driver-submit" id="driver-submit" type="submit">로그인</button><p class="driver-notice" id="driver-notice" aria-live="polite"></p></form><section class="trip-controls" id="trip-controls" hidden><button class="trip-start" id="trip-start" type="button">운행 시작 · GPS 공유</button><button class="trip-stop" id="trip-stop" type="button">운행 종료</button><p class="trip-status" id="trip-status" aria-live="polite"></p></section><p class="driver-privacy">운행 시작을 누른 동안에만 현재 위치가 공개 지도에 표시됩니다.</p></section></div><div class="gps-help-modal" id="gps-help-modal" hidden><section class="gps-help-card" role="dialog" aria-modal="true" aria-labelledby="gps-help-title"><button class="gps-help-close" id="gps-help-close" type="button" aria-label="닫기">×</button><h2 id="gps-help-title">GPS 연결이 필요해요</h2><p id="gps-help-message">위치 권한을 허용하면 현재 위치를 지도에 표시할 수 있습니다.</p><div class="gps-help-guide"><strong>연결하는 방법</strong><ol><li>위치 권한 창이 뜨면 <b>허용</b>을 선택하세요.</li><li>권한 창이 다시 안 뜨면 주소창 왼쪽의 자물쇠 또는 사이트 설정에서 <b>위치: 허용</b>으로 바꾸세요.</li><li>휴대폰은 설정에서 <b>위치 서비스</b>를 켜고, Safari 또는 사용 중인 브라우저의 위치 권한을 <b>허용</b>으로 바꾸세요.</li><li>아래 버튼을 눌러 다시 연결해 보세요.</li></ol></div><p class="gps-help-tip">현재 위치는 지도에 표시할 때만 사용되며, 이 기능으로 저장되지 않습니다.</p><button class="gps-help-retry" id="gps-help-retry" type="button">GPS 다시 연결하기</button></section></div>
+  </div><section class="route-screen" id="route-screen" hidden><header class="route-head"><div><p class="eyebrow">BUS ROUTE</p><h1>노선 관리</h1><p>확인할 노선을 선택하면 지도에서 해당 구간을 볼 수 있습니다.</p></div><button class="route-back" id="route-back" type="button">지도 돌아가기</button></header><div class="route-cards" id="route-cards"><button class="route-card" data-route="jangjeon1" type="button"><i></i><strong>장전1</strong><span>장전동 · 부산대 일대</span></button><button class="route-card" data-route="jangjeon2" type="button"><i></i><strong>장전2</strong><span>장전역 · 구서역 일대</span></button><button class="route-card" data-route="bugok" type="button"><i></i><strong>부곡</strong><span>부곡동 · 금정구청 일대</span></button><button class="route-card" data-route="namsan1" type="button"><i></i><strong>남산1</strong><span>남산동 · 구서동 일대</span></button><button class="route-card" data-route="namsan2" type="button"><i></i><strong>남산2</strong><span>남산동 · 두실역 일대</span></button></div></section><section class="driver-console" id="driver-console" hidden><div class="driver-console-inner"><header class="driver-console-head"><div><p class="eyebrow">DRIVER CONSOLE</p><h1>기사 운행 관리</h1><p>노선을 만들고, GPS 위치를 공유하며 운행 차량 상태를 확인하세요.</p></div><button class="driver-close-console" id="driver-console-close" type="button">처음으로</button></header><div class="driver-tools"><section class="driver-tool"><h2>노선 만들기</h2><p>기본 노선을 골라 새 노선 이름으로 이용자 화면에 등록합니다.</p><form class="driver-route-form" id="driver-route-form"><input id="driver-route-name" maxlength="20" placeholder="예: 브니엘 셔틀" required><select id="driver-route-base"><option value="jangjeon1">장전1 경로 사용</option><option value="jangjeon2">장전2 경로 사용</option><option value="bugok">부곡 경로 사용</option><option value="namsan1">남산1 경로 사용</option><option value="namsan2">남산2 경로 사용</option></select><button type="submit">노선 등록하기</button><small id="driver-route-notice"></small></form></section><section class="driver-tool"><h2>위치 공유</h2><p>운행 시작을 누른 동안에만 현재 GPS 위치가 이용자 지도에 표시됩니다.</p><div class="driver-trip-slot" id="driver-trip-slot"></div></section><section class="driver-tool"><h2>운행 차량</h2><p>현재 로그인한 기사의 차량 위치가 공유되면 이용자 지도에 표시됩니다.</p><div class="driver-vehicle-status" id="driver-vehicle-status">운행 대기 중</div></section></div></div></section><div class="driver-modal" id="driver-modal" hidden><section class="driver-card" role="dialog" aria-modal="true" aria-labelledby="driver-title"><button class="driver-close" id="driver-close" type="button" aria-label="닫기">×</button><h2 id="driver-title">기사 로그인</h2><p>운행을 시작한 기사만 위치 공유를 활성화할 수 있습니다.</p><form class="driver-form" id="driver-form"><label>이메일<input id="driver-email" type="email" autocomplete="email" placeholder="driver@example.com" required></label><label>비밀번호<input id="driver-password" type="password" autocomplete="current-password" placeholder="비밀번호" required></label><button class="driver-submit" id="driver-submit" type="submit">로그인</button><p class="driver-notice" id="driver-notice" aria-live="polite"></p></form><section class="trip-controls" id="trip-controls" hidden><button class="trip-start" id="trip-start" type="button">운행 시작 · GPS 공유</button><button class="trip-stop" id="trip-stop" type="button">운행 종료</button><p class="trip-status" id="trip-status" aria-live="polite"></p></section><p class="driver-privacy">운행 시작을 누른 동안에만 현재 위치가 공개 지도에 표시됩니다.</p></section></div><div class="gps-help-modal" id="gps-help-modal" hidden><section class="gps-help-card" role="dialog" aria-modal="true" aria-labelledby="gps-help-title"><button class="gps-help-close" id="gps-help-close" type="button" aria-label="닫기">×</button><h2 id="gps-help-title">GPS 연결이 필요해요</h2><p id="gps-help-message">위치 권한을 허용하면 현재 위치를 지도에 표시할 수 있습니다.</p><div class="gps-help-guide"><strong>연결하는 방법</strong><ol><li>위치 권한 창이 뜨면 <b>허용</b>을 선택하세요.</li><li>권한 창이 다시 안 뜨면 주소창 왼쪽의 자물쇠 또는 사이트 설정에서 <b>위치: 허용</b>으로 바꾸세요.</li><li>휴대폰은 설정에서 <b>위치 서비스</b>를 켜고, Safari 또는 사용 중인 브라우저의 위치 권한을 <b>허용</b>으로 바꾸세요.</li><li>아래 버튼을 눌러 다시 연결해 보세요.</li></ol></div><p class="gps-help-tip">현재 위치는 지도에 표시할 때만 사용되며, 이 기능으로 저장되지 않습니다.</p><button class="gps-help-retry" id="gps-help-retry" type="button">GPS 다시 연결하기</button></section></div>
   <script>const c=document.getElementById('clock');function tick(){c.textContent=new Intl.DateTimeFormat('ko-KR',{dateStyle:'medium',timeStyle:'medium'}).format(new Date())}tick();setInterval(tick,1000);const mapRoot=document.getElementById('kakao-map');mapRoot.style.minHeight='430px';let mapStarted=false;function showBackupMap(){if(mapStarted)return;mapRoot.innerHTML='<iframe title="금정구 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=129.055%2C35.218%2C129.132%2C35.275&amp;layer=mapnik&amp;marker=35.2426%2C129.0926" style="width:100%;height:100%;border:0" loading="eager"></iframe>'}function initKakaoMap(){if(mapStarted)return;try{const center=new kakao.maps.LatLng(35.2426,129.0926);const map=new kakao.maps.Map(mapRoot,{center,level:5});mapStarted=true;window.busMap=map;map.setZoomable(true);map.addControl(new kakao.maps.ZoomControl(),kakao.maps.ControlPosition.RIGHT);window.dispatchEvent(new Event('busmapready'));const repairMap=()=>{if(window.busMap){window.busMap.relayout();window.busMap.setCenter(center)}};window.addEventListener('resize',repairMap);requestAnimationFrame(repairMap);setTimeout(repairMap,250)}catch(error){showBackupMap()}}let attempts=0;const sdkWait=setInterval(()=>{if(window.kakao&&kakao.maps){clearInterval(sdkWait);try{kakao.maps.load(initKakaoMap)}catch(error){showBackupMap()}}else if(++attempts>=15){clearInterval(sdkWait);showBackupMap()}},200);const modal=document.getElementById('driver-modal');document.getElementById('driver-close').onclick=()=>modal.hidden=true;modal.onclick=e=>{if(e.target===modal)modal.hidden=true};</script>
   <script>
     const roleScreen = document.getElementById('role-screen');
     const dashboard = document.getElementById('dashboard');
     const driverModal = document.getElementById('driver-modal');
+    const driverConsole = document.getElementById('driver-console');
     const routeScreen = document.getElementById('route-screen');
+    const routeCards = document.getElementById('route-cards');
     const routeDisplay = document.getElementById('route-display');
     const routePlans = {
       jangjeon1: { name: '장전1', color: '#2864dc', points: [[35.2338,129.0835],[35.2365,129.0849],[35.2394,129.0864],[35.2423,129.0890],[35.2442,129.0914]] },
@@ -70,6 +73,7 @@
     };
     const returnToRoleScreen = () => {
       driverModal.hidden = true;
+      driverConsole.hidden = true;
       routeScreen.hidden = true;
       dashboard.hidden = true;
       roleScreen.hidden = false;
@@ -85,6 +89,14 @@
       });
       setTimeout(() => { if (window.busMap) window.busMap.relayout(); }, 350);
     };
+    const openDriverConsole = () => {
+      roleScreen.hidden = true;
+      dashboard.hidden = true;
+      routeScreen.hidden = true;
+      driverModal.hidden = true;
+      driverConsole.hidden = false;
+    };
+    window.openDriverConsole = openDriverConsole;
     document.getElementById('role-user').onclick = openDashboard;
     document.getElementById('role-driver').onclick = () => {
       openDashboard();
@@ -96,17 +108,32 @@
       routeScreen.hidden = false;
     };
     document.getElementById('route-back').onclick = openDashboard;
-    document.querySelectorAll('.route-card').forEach(card => card.onclick = () => {
+    routeCards.onclick = event => {
+      const card = event.target.closest('.route-card');
+      if (!card) return;
       openDashboard();
       const routeId = card.dataset.route;
       requestAnimationFrame(() => showSelectedRoute(routeId));
       setTimeout(() => showSelectedRoute(routeId), 450);
-    });
+    };
+    window.registerSharedRoute = (id, data) => {
+      const base = routePlans[data.baseRouteId] || routePlans.jangjeon1;
+      routePlans[id] = { name: data.name, color: '#10233f', points: base.points };
+      if (routeCards.querySelector(`[data-route="${id}"]`)) return;
+      const card = document.createElement('button');
+      card.className = 'route-card';
+      card.type = 'button';
+      card.dataset.route = id;
+      card.innerHTML = `<i></i><strong>${data.name}</strong><span>기사 등록 노선 · ${base.name} 경로</span>`;
+      routeCards.append(card);
+    };
     window.addEventListener('busmapready', () => { if (selectedRouteId) showSelectedRoute(selectedRouteId); });
     document.getElementById('driver-close').onclick = returnToRoleScreen;
+    document.getElementById('driver-console-close').onclick = returnToRoleScreen;
     driverModal.onclick = event => { if (event.target === driverModal) returnToRoleScreen(); };
     // 브라우저가 이전 화면 상태를 복원해도, 새로고침 후에는 항상 첫 선택 화면을 표시합니다.
-    window.addEventListener('pageshow', returnToRoleScreen);
+    window.addEventListener('load', returnToRoleScreen, { once: true });
+    window.addEventListener('pageshow', event => { if (event.persisted) returnToRoleScreen(); });
   </script>
   <script>
     let personalLocationWatchId = null;
@@ -170,7 +197,7 @@
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
     import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
-    import { getFirestore, doc, setDoc, deleteDoc, collection, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
+    import { getFirestore, doc, setDoc, deleteDoc, collection, addDoc, onSnapshot, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js';
 
     const firebaseConfig = {
       apiKey: 'AIzaSyCTgSZ9sgb_8k5cXBC3N6aUrOO94Ka650U',
@@ -196,6 +223,9 @@
         await signInWithEmailAndPassword(auth, document.getElementById('driver-email').value, document.getElementById('driver-password').value);
         notice.style.color = '#158461';
         notice.textContent = '로그인되었습니다. 아래에서 운행 시작을 눌러 GPS를 공유해 주세요.';
+        document.getElementById('driver-trip-slot').append(document.getElementById('trip-controls'));
+        document.getElementById('trip-controls').hidden = false;
+        window.openDriverConsole();
       } catch (error) {
         notice.style.color = '#c34c4c';
         notice.textContent = error.code === 'auth/invalid-credential' ? '이메일 또는 비밀번호를 다시 확인해 주세요.' : '로그인할 수 없습니다. 잠시 후 다시 시도해 주세요.';
@@ -213,6 +243,31 @@
     let locationWatchId = null;
     let vehicleMarkers = new Map();
     let latestVehicles = [];
+    const vehicleStatus = document.getElementById('driver-vehicle-status');
+    const driverRouteForm = document.getElementById('driver-route-form');
+    const driverRouteNotice = document.getElementById('driver-route-notice');
+
+    driverRouteForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const name = document.getElementById('driver-route-name').value.trim();
+      const baseRouteId = document.getElementById('driver-route-base').value;
+      if (!name) return;
+      driverRouteNotice.textContent = '노선을 등록하고 있습니다…';
+      try {
+        const saved = await addDoc(collection(db, 'routes'), { name, baseRouteId, createdBy: auth.currentUser.uid, createdAt: serverTimestamp() });
+        window.registerSharedRoute(saved.id, { name, baseRouteId });
+        driverRouteForm.reset();
+        driverRouteNotice.style.color = '#158461';
+        driverRouteNotice.textContent = '등록되었습니다. 이용자 노선 관리에서 바로 볼 수 있어요.';
+      } catch (error) {
+        driverRouteNotice.style.color = '#c34c4c';
+        driverRouteNotice.textContent = '노선을 저장하지 못했습니다. Firestore 규칙을 확인해 주세요.';
+      }
+    });
+
+    onSnapshot(collection(db, 'routes'), snapshot => {
+      snapshot.docs.forEach(item => window.registerSharedRoute(item.id, item.data()));
+    }, () => {});
 
     function writeTripStatus(message, error = false) {
       tripStatus.style.color = error ? '#c34c4c' : '#158461';
@@ -269,6 +324,7 @@
             updatedAt: serverTimestamp()
           });
           tripStart.textContent = 'GPS 공유 중';
+          vehicleStatus.textContent = '운행 중 · 현재 위치를 이용자 지도에 공유하고 있습니다.';
           writeTripStatus('현재 위치를 지도에 공유하고 있습니다.');
         } catch (error) {
           writeTripStatus('위치를 저장하지 못했습니다. 인터넷 연결을 확인해 주세요.', true);
@@ -281,6 +337,7 @@
 
     tripStop.addEventListener('click', () => {
       stopGpsSharing(true);
+      vehicleStatus.textContent = '운행 종료 · 위치 공유가 중지되었습니다.';
       writeTripStatus('운행을 종료했고 위치 공유를 중지했습니다.');
     });
 
