@@ -39,6 +39,13 @@
   <script>
     const roleScreen = document.getElementById('role-screen');
     const dashboard = document.getElementById('dashboard');
+    const driverModal = document.getElementById('driver-modal');
+    const returnToRoleScreen = () => {
+      driverModal.hidden = true;
+      dashboard.hidden = true;
+      roleScreen.hidden = false;
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    };
     const openDashboard = () => {
       roleScreen.hidden = true;
       dashboard.hidden = false;
@@ -51,8 +58,12 @@
     document.getElementById('role-user').onclick = openDashboard;
     document.getElementById('role-driver').onclick = () => {
       openDashboard();
-      document.getElementById('driver-modal').hidden = false;
+      driverModal.hidden = false;
     };
+    document.getElementById('driver-close').onclick = returnToRoleScreen;
+    driverModal.onclick = event => { if (event.target === driverModal) returnToRoleScreen(); };
+    // 브라우저가 이전 화면 상태를 복원해도, 새로고침 후에는 항상 첫 선택 화면을 표시합니다.
+    window.addEventListener('pageshow', returnToRoleScreen);
   </script>
   <script>
     let personalLocationWatchId = null;
