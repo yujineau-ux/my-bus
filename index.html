@@ -35,28 +35,34 @@
   <script>const c=document.getElementById('clock');function tick(){c.textContent=new Intl.DateTimeFormat('ko-KR',{dateStyle:'medium',timeStyle:'medium'}).format(new Date())}tick();setInterval(tick,1000);const mapRoot=document.getElementById('kakao-map');mapRoot.style.minHeight='430px';let mapStarted=false;function showBackupMap(){if(mapStarted)return;mapRoot.innerHTML='<iframe title="금정구 지도" src="https://www.openstreetmap.org/export/embed.html?bbox=129.055%2C35.218%2C129.132%2C35.275&amp;layer=mapnik&amp;marker=35.2426%2C129.0926" style="width:100%;height:100%;border:0" loading="eager"></iframe>'}function initKakaoMap(){if(mapStarted)return;try{const center=new kakao.maps.LatLng(35.2426,129.0926);const map=new kakao.maps.Map(mapRoot,{center,level:5});mapStarted=true;window.busMap=map;map.setZoomable(true);map.addControl(new kakao.maps.ZoomControl(),kakao.maps.ControlPosition.RIGHT);window.dispatchEvent(new Event('busmapready'));const repairMap=()=>{if(window.busMap){window.busMap.relayout();window.busMap.setCenter(center)}};window.addEventListener('resize',repairMap);requestAnimationFrame(repairMap);setTimeout(repairMap,250)}catch(error){showBackupMap()}}let attempts=0;const sdkWait=setInterval(()=>{if(window.kakao&&kakao.maps){clearInterval(sdkWait);try{kakao.maps.load(initKakaoMap)}catch(error){showBackupMap()}}else if(++attempts>=15){clearInterval(sdkWait);showBackupMap()}},200);const modal=document.getElementById('driver-modal');document.getElementById('driver-open').onclick=()=>modal.hidden=false;document.getElementById('driver-close').onclick=()=>modal.hidden=true;modal.onclick=e=>{if(e.target===modal)modal.hidden=true};const userModal=document.getElementById('user-modal');const openUserLogin=()=>userModal.hidden=false;document.getElementById('sidebar-login-open').onclick=openUserLogin;document.getElementById('sidebar-user-open').onclick=openUserLogin;document.getElementById('user-close').onclick=()=>userModal.hidden=true;userModal.onclick=e=>{if(e.target===userModal)userModal.hidden=true};</script>
   <script>
     let personalLocationWatchId = null;
+    let personalGpsOn = false;
     const currentLocationButton = document.getElementById('current-location');
+    const setPersonalGpsButton = active => {
+      personalGpsOn = active;
+      currentLocationButton.textContent = active ? '● GPS 끄기' : '⌖ 현재 위치';
+      currentLocationButton.setAttribute('aria-pressed', String(active));
+      currentLocationButton.title = active ? 'GPS 위치 추적을 중지합니다' : '내 GPS 위치 추적을 시작합니다';
+    };
     const stopPersonalLocation = () => {
       if (personalLocationWatchId !== null) navigator.geolocation.clearWatch(personalLocationWatchId);
       personalLocationWatchId = null;
       if (window.userLocationMarker) { window.userLocationMarker.setMap(null); window.userLocationMarker = null; }
-      currentLocationButton.textContent = '⌖ 현재 위치';
+      setPersonalGpsButton(false);
     };
     currentLocationButton.addEventListener('click', () => {
       if (!navigator.geolocation) { alert('이 기기에서는 위치 기능을 사용할 수 없습니다.'); return; }
-      if (personalLocationWatchId !== null) { stopPersonalLocation(); return; }
-      currentLocationButton.textContent = 'GPS 연결 중…';
+      if (personalGpsOn) { stopPersonalLocation(); return; }
+      // 지도 로딩 여부와 관계없이 먼저 추적 상태를 켜서 언제든 다시 눌러 끌 수 있게 합니다.
+      setPersonalGpsButton(true);
       personalLocationWatchId = navigator.geolocation.watchPosition(position => {
-        if (!window.busMap || !window.kakao) { currentLocationButton.textContent = '지도 준비 중…'; return; }
+        if (!window.busMap || !window.kakao) return;
         const here = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
         window.busMap.setLevel(4);
         window.busMap.panTo(here);
         if (window.userLocationMarker) window.userLocationMarker.setMap(null);
         window.userLocationMarker = new kakao.maps.Marker({ position: here, map: window.busMap, title: '내 현재 위치' });
-        currentLocationButton.textContent = '● GPS 끄기';
       }, error => {
-        personalLocationWatchId = null;
-        currentLocationButton.textContent = '⌖ 현재 위치';
+        stopPersonalLocation();
         alert(error.code === 1 ? '위치 권한을 허용하면 GPS를 켤 수 있습니다.' : '현재 위치를 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.');
       }, { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 });
     });
